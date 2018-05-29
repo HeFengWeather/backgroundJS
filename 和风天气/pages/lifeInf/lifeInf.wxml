@@ -1,0 +1,14 @@
+<!--pages/lifeInf/lifeInf.wxml-->
+<view class="container">
+  <block  wx:for="{{for_array}}" wx:for-item="i" >
+  <view>
+<image src="{{i.img}}"></image>
+<text>{{i.brf}}</text>
+<text>{{i.txt}}</text>
+  </view>
+  </block>
+   <view>
+   <text>{{for_sr}}</text>        -----
+   <text>{{for_ss}}</text>
+   </view>
+</view>

@@ -1,0 +1,16 @@
+<!--index.wxml-->
+<view class="container">
+ <view class="section__title">省市区选择器：</view>
+  <picker mode="region" bindchange="bindRegionChange" value="{{region}}" custom-item="{{customItem}}">
+    <view class="picker">
+      当前选择：{{region[0]}}，{{region[1]}}，{{region[2]}}
+    </view>
+  </picker>
+  <text id="now_weather">{{now_weather}}</text>
+  <text id="now_cond">{{now_cond}}</text>
+  <text id="temp">{{high_tmp}}/{{low_tmp}}</text>
+  <block id="forecast" wx:for="{{for_array}}">
+  <image src="{{item.img}}"></image>
+  {{item.date}}  {{item.tmp_max}}/{{item.tmp_min}}
+  </block>
+</view>
