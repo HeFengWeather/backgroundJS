@@ -1,21 +1,66 @@
-/**index.wxss**/
-.userinfo {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.picker {
+  padding: 25rpx;
 }
 
-.userinfo-avatar {
-  width: 128rpx;
-  height: 128rpx;
-  margin: 20rpx;
-  border-radius: 50%;
+.picker-now {
+  color: rgb(70, 67, 94);
+  font-family: "SF Pro SC", "SF Pro Display", "SF Pro Icons", "PingFang SC", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  font-size: 1.0rem;
+  font-weight: bolder;
+  letter-spacing: 13rpx;
 }
 
-.userinfo-nickname {
-  color: #aaa;
+#now_weather {
+  color: black;
+  font-size: 3rem;
+  font-weight: normal;
+  font-family: "SF Pro Text","Myriad Set Pro","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
 }
 
-.usermotto {
-  margin-top: 200px;
+#now_cond {
+  color: black;
+}
+
+#temp {
+  color: black;
+  font-family: "SF Pro Text","Myriad Set Pro","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
+  font-weight: normal;
+  font-size: 1.1rem;
+}
+
+.temp-max {
+  margin-right: 50rpx;
+}
+
+.temp-min {
+
+}
+
+.cond-data {
+  width: 100%;
+  text-align: center;
+}
+
+.cond-data view{
+  display: inline;
+}
+
+.cond-data-date {
+  margin-right: 80rpx;
+  margin-left: -40px;
+}
+
+.cond-img {
+  display: inline-block;
+  width: 45rpx;
+  height: 45rpx;
+  margin-right: 80rpx;
+}
+
+.cond-data-maxtmp{
+  margin-right: 30rpx;
+}
+
+.cond-data-mintmp{
+
 }

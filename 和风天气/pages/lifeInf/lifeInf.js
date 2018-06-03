@@ -2,7 +2,7 @@
 //获取应用实例
 const app = getApp()
 var curCity
-var list2 = ["/pages/image/movie-0.jpg", "/pages/image/movie-0.jpg", "/pages/image/movie-0.jpg", "/pages/image/movie-0.jpg", "/pages/image/movie-0.jpg", "/pages/image/movie-0.jpg", "/pages/image/movie-0.jpg", "/pages/image/movie-0.jpg"], list1 = [], list = []//初始每一条生活信息的图片路径
+var list2 = ["/image/movie-0.jpg", "/image/movie-0.jpg", "/image/movie-0.jpg", "/image/movie-0.jpg", "/image/movie-0.jpg", "/image/movie-0.jpg", "/image/movie-0.jpg", "/image/movie-0.jpg"], list1 = [], list = []//初始每一条生活信息的图片路径
 var result//判定是否setImage函数执行完成
 var jsonData//生活信息的json数据
 var sunJson//日出时间的json数据

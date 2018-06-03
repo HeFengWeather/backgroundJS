@@ -10,17 +10,16 @@ var curCity = app.globalData.selectedCity//curCity为当前选择的城市，使
 Page({
   data: {
     now_weather: "7",
-    region: ['山东省', '青岛市', '崂山区'],
-    customItem: '全部'
+    region: ['山东省', '青岛市', '崂山区']
   },
   bindRegionChange: function (e) {
-    console.log('picker发送选择改变，携带值为', e.detail.value)
+    // console.log('picker发送选择改变，携带值为', e.detail.value)
     this.setData({
       region: e.detail.value
     })
     curCity = e.detail.value[1]
-    app.globalData.selectedCity=curCity 
-   
+    app.globalData.selectedCity = curCity
+
     console.log(app.globalData.selectedCity)
 
     var that = this
@@ -58,7 +57,7 @@ Page({
             'Content-Type': 'application/json'
           },
           success: function (res) {
-
+            console.log(res);
             that.setData({
               now_weather: res.data.HeWeather6[0].now.tmp,
               now_cond: res.data.HeWeather6[0].now.cond_txt,
@@ -74,9 +73,6 @@ Page({
         clearTimeout(times);//清除计数器
       }
     })
-  },
-  getUserInfo: function (e) {
-
   }
 })
 
