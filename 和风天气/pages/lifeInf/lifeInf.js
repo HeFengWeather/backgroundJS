@@ -9,7 +9,7 @@ var sunJson//日出时间的json数据
 var forsr, forss//日出，日落
 Page({
   data: {
-    now_weather: "7",
+    now_weather: "0",
     for_sr: "06:00",
     for_ss: "18:00",//初始日出日落时间
   },
@@ -20,7 +20,26 @@ Page({
     setImage()
     console.log(curCity)
     var times = setInterval(function () {
-      if (result) {
+      if(result==-1){
+        clearTimeout(times);
+        that.setData({
+          now_weather: "网络错误，请尝试重新进入",
+          for_sr: "0:00",
+          for_ss: "0:00"
+        })
+        wx.showModal({
+          title: '提示',
+          content: '网络错误，请尝试重新进入',
+          success: function (res) {
+            if (res.confirm) {
+              console.log('用户点击确定')
+            } else {
+              console.log('用户点击取消')
+            }
+          }
+        })
+      }
+      if (result==1) {
         console.log(jsonData)
         for (var i = 0; i < 8; i++) {//根据json对象找出每一个需要的值，重新建立对象，赋值list数组
           var object1 = new Object();
@@ -77,9 +96,16 @@ function setImage() {//拉取生活信息，并转成json对象
         jsonData: JSON.stringify(res.data.HeWeather6[0].daily_forecast)
 
       })*/
-      result = 1
-      jsonData = JSON.stringify(res.data.HeWeather6[0].lifestyle)
-      sunJson = JSON.stringify(res.data.HeWeather6[0].daily_forecast[0])
+      if (!res.data.HeWeather6[0].basic) {
+        result=-1;
+      }
+      else{
+        result = 1
+        jsonData = JSON.stringify(res.data.HeWeather6[0].lifestyle)
+        sunJson = JSON.stringify(res.data.HeWeather6[0].daily_forecast[0])
+      }
+      
+      
       //console.log(jsonData)
       //setImage()
     }

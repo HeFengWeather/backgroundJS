@@ -9,7 +9,7 @@ var list = [], result, forarray, jsonData
 var curCity = app.globalData.selectedCity//curCity为当前选择的城市，使用全局变量
 Page({
   data: {
-    now_weather: "7",
+    now_weather: "0",
     region: ['山东省', '青岛市', '崂山区']
   },
   bindRegionChange: function (e) {
@@ -29,16 +29,31 @@ Page({
         'Content-Type': 'application/json'
       },
       success: function (res) {
+        if (!res.data.HeWeather6[0].basic) {
+          wx.showModal({
+            title: '提示',
+            content: '网络错误，加载失败，请检查您的网络',
+            success: function (res) {
+              if (res.confirm) {
+                console.log('用户点击确定')
+              } else {
+                console.log('用户点击取消')
+              }
 
-        that.setData({
-          now_weather: res.data.HeWeather6[0].now.tmp,
-          now_cond: res.data.HeWeather6[0].now.cond_txt,
-          high_tmp: res.data.HeWeather6[0].daily_forecast[0].tmp_max,
-          low_tmp: res.data.HeWeather6[0].daily_forecast[0].tmp_min,
-          for_array: res.data.HeWeather6[0].daily_forecast,
-          result: 1,
-          jsonData: JSON.stringify(res.data.HeWeather6[0].daily_forecast)
-        })
+            }
+          })}
+            else{
+          that.setData({
+            now_weather: res.data.HeWeather6[0].now.tmp,
+            now_cond: res.data.HeWeather6[0].now.cond_txt,
+            high_tmp: res.data.HeWeather6[0].daily_forecast[0].tmp_max,
+            low_tmp: res.data.HeWeather6[0].daily_forecast[0].tmp_min,
+            for_array: res.data.HeWeather6[0].daily_forecast,
+            result: 1,
+            jsonData: JSON.stringify(res.data.HeWeather6[0].daily_forecast)
+          })
+            }
+       
       }
     }
     )
@@ -57,16 +72,23 @@ Page({
             'Content-Type': 'application/json'
           },
           success: function (res) {
-            console.log(res);
-            that.setData({
-              now_weather: res.data.HeWeather6[0].now.tmp,
-              now_cond: res.data.HeWeather6[0].now.cond_txt,
-              high_tmp: res.data.HeWeather6[0].daily_forecast[0].tmp_max,
-              low_tmp: res.data.HeWeather6[0].daily_forecast[0].tmp_min,
-              for_array: res.data.HeWeather6[0].daily_forecast,
-              result: 1,
-              jsonData: JSON.stringify(res.data.HeWeather6[0].daily_forecast)
-            })
+            if (!res.data.HeWeather6[0].basic)
+              {
+              that.setData({
+                now_cond: '定位失败，请手动定位',
+              })
+              }
+            else {
+              that.setData({
+                now_weather: res.data.HeWeather6[0].now.tmp,
+                now_cond: res.data.HeWeather6[0].now.cond_txt,
+                high_tmp: res.data.HeWeather6[0].daily_forecast[0].tmp_max,
+                low_tmp: res.data.HeWeather6[0].daily_forecast[0].tmp_min,
+                for_array: res.data.HeWeather6[0].daily_forecast,
+                result: 1,
+                jsonData: JSON.stringify(res.data.HeWeather6[0].daily_forecast)
+              })
+            }
           }//加载图片，未完成
         },
         )
