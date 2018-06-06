@@ -39,7 +39,6 @@ Page({
               } else {
                 console.log('用户点击取消')
               }
-
             }
           })}
             else{
@@ -53,7 +52,6 @@ Page({
             jsonData: JSON.stringify(res.data.HeWeather6[0].daily_forecast)
           })
             }
-       
       }
     }
     )

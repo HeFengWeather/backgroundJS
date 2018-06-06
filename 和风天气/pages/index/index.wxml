@@ -1,24 +1,31 @@
 <!--index.wxml-->
-<view class='background'>
-  <view class="container">
-    <picker class="picker" mode="region" bindchange="bindRegionChange" value="{{region}}">
-      <view class="picker-now">
-        {{region[0]}} {{region[1]}} {{region[2]}}
-      </view>
-    </picker>
-    <text id="now_weather">{{now_weather}}°C</text>
-    <text id="now_cond">{{now_cond}}</text>
-    <view id="temp">
-    <text class='temp-max'>{{high_tmp}}</text>
-    <text class='temp-min'>{{low_tmp}}</text>
+<view class="container">
+  <picker class="picker" mode="region" bindchange="bindRegionChange" value="{{region}}">
+    <view class="picker-now">
+      <text class='picker-now-region1'>{{region[0]}} {{region[1]}}</text>
+      <text class='picker-now-region2'>{{region[2]}}</text>
     </view>
-    <block id="forecast" wx:for="{{for_array}}">
-      <view class='cond-data'>
-        <view class='cond-data-date'>{{item.date}}</view><image class='cond-img' src="/image/cond_icon/{{item.cond_code_d}}.png"></image>
-        <view class='cond-data-maxtmp'>{{item.tmp_max}}</view>
-        <view class='cond-data-mintmp'>{{item.tmp_min}}</view>
+  </picker>
+  <view class='content'>
+    <view class="content-now_weather">
+      <text>{{now_weather}}</text>
+    </view>
+    <view class="content-now_cond">
+      <text>{{now_cond}}</text>
+    </view>
+    <view class="content-temp">
+      <text class='content-temp-max'>{{high_tmp}}</text>
+      <text class='content-temp-min'>{{low_tmp}}</text>
+    </view>
+  </view>
+  <view class="forecast">
+    <block wx:for="{{for_array}}">
+      <view class='forecast-data'>
+        <view class='forecast-data-date'>{{item.date}}</view>
+        <image class='forecast-data-img' src="/image/cond_icon/{{item.cond_code_d}}.png"></image>
+        <view class='forecast-data-maxtmp'>{{item.tmp_max}}</view>
+        <view class='forecast-data-mintmp'>{{item.tmp_min}}</view>
       </view>
-
     </block>
   </view>
 </view>
