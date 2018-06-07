@@ -17,7 +17,7 @@ page{
 }
 
 .container::before{
-  background: url('http://img.hb.aicdn.com/706985eeb4fe044e5a391610477ac062c95894b56349-hgPKc3_fw658') no-repeat;
+  /*background: url('http://img.hb.aicdn.com/706985eeb4fe044e5a391610477ac062c95894b56349-hgPKc3_fw658') no-repeat;*/
     background-size: cover;
     width: 100%;
     height: 100%;

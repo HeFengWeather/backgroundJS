@@ -67,7 +67,7 @@ Page({
         for_ss: forss
       })
     },
-
+2000
     )
   },
 
