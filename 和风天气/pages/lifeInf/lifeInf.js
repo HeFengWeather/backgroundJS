@@ -13,6 +13,7 @@ Page({
     for_sr: "06:00",
     for_ss: "18:00",//初始日出日落时间
   },
+
   //事件处理函数
   onLoad: function () {
     curCity = app.globalData.selectedCity
@@ -58,25 +59,20 @@ Page({
         console.log(json2)
         forsr = json2.sr
         forss = json2.ss
-        console.log(json2)
-        clearTimeout(times);
+        console.log(forsr)
+        console.log(forss);
+        clearTimeout(times); 
+        that.setData({
+            for_array: list,
+            for_sr: forsr,
+            for_ss: forss
+        });
       }
-      that.setData({
-        for_array: list,
-        for_sr: forsr,
-        for_ss: forss
-      })
     },
-
     )
-  },
-
-
-
-  getUserInfo: function (e) {
-
   }
 })
+
 function setImage() {//拉取生活信息，并转成json对象
   var that = this
   wx.request({
@@ -104,8 +100,7 @@ function setImage() {//拉取生活信息，并转成json对象
         jsonData = JSON.stringify(res.data.HeWeather6[0].lifestyle)
         sunJson = JSON.stringify(res.data.HeWeather6[0].daily_forecast[0])
       }
-      
-      
+
       //console.log(jsonData)
       //setImage()
     }
