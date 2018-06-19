@@ -1,11 +1,7 @@
 //app.js
 App({
   onLaunch: function () {
-    // 展示本地存储能力
-    var logs = wx.getStorageSync('logs') || []
-    logs.unshift(Date.now())
-    wx.setStorageSync('logs', logs)
-
+   
     // 登录
     wx.login({
       success: res => {
@@ -33,7 +29,12 @@ App({
       }
     })
   },
+  
   globalData: {
-    selectedCity: '青岛'
+    selectedCity: '青岛',
+    TabBar:0
   }
+})
+wx.switchTab({
+  url: 'pages/index/index'
 })

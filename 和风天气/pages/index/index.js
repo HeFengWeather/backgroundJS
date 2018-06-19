@@ -1,6 +1,14 @@
 //index.js
 //获取应用实例
 const app = getApp()
+wx.switchTab({
+  url: 'pages/lifeInf/lifeInf',
+  success: function (e) {
+    var page = getCurrentPages().pop();
+    if (page == undefined || page == null) return;
+    page.onLoad();
+  }
+}) 
 var curCity = app.globalData.selectedCity
 var QQMapWX = require('../../utils/qqmap-wx-jssdk.js')
 var address;
