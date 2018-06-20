@@ -35,6 +35,3 @@ App({
     TabBar:0
   }
 })
-wx.switchTab({
-  url: 'pages/index/index'
-})
