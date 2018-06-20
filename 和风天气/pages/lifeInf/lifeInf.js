@@ -13,6 +13,8 @@ Page({
     now_weather: "0",
     for_sr: "06:00",
     for_ss: "18:00",//初始日出日落时间
+    z_index: 2,
+    wave_list: []
   },
   
   //事件处理函数
@@ -127,6 +129,9 @@ Page({
     },
       2000
     )
+  },
+  wave: function (e) {
+      app.wave(e.detail.x, e.detail.y, this.data.z_index + 1, this);
   }
 })
 function setImage() {//拉取生活信息，并转成json对象

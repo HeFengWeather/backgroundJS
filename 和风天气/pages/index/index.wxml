@@ -1,31 +1,44 @@
 <!--index.wxml-->
-<view class="container">
-  <picker class="picker" mode="region" bindchange="bindRegionChange" value="{{region}}">
-    <view class="picker-now">
-      <text class='picker-now-region1'>{{region[0]}} {{region[1]}}</text>
-      <text class='picker-now-region2'>{{region[2]}}</text>
+<view class="container" bindtap="wave">
+    <view class="wave-wapper" wx:for="{{wave_list}}" wx:key="item">
+        <view class="wave-position water" style="z-index:{{item.z_index}};top:{{item.tap_y-100}}px;left:{{item.tap_x-100}}px;">
+            <view class="wave-body">
+                <view class="wave wave5"></view>
+                <view class="wave wave4"></view>
+                <view class="wave wave3"></view>
+                <view class="wave wave2"></view>
+                <view class="wave wave1"></view>
+                <view class="wave wave0"></view>
+            </view>
+        </view>
+    </view >
+
+    <picker class="picker" mode="region" bindchange="bindRegionChange" value="{{region}}">
+        <view class="picker-now">
+            <text class='picker-now-region1'>{{region[0]}} {{region[1]}}</text>
+            <text class='picker-now-region2'>{{region[2]}}</text>
+        </view>
+    </picker>
+    <view class='content'>
+        <view class="content-now_weather">
+            <text>{{now_weather}}</text>
+        </view>
+        <view class="content-now_cond">
+            <text>{{now_cond}}</text>
+        </view>
+        <view class="content-temp">
+            <text class='content-temp-max'>{{high_tmp}}</text>
+            <text class='content-temp-min'>{{low_tmp}}</text>
+        </view>
     </view>
-  </picker>
-  <view class='content'>
-    <view class="content-now_weather">
-      <text>{{now_weather}}</text>
+    <view class="forecast">
+        <block wx:for="{{for_array}}" wx:key="item">
+            <view class='forecast-data'>
+                <view class='forecast-data-date'>{{item.date}}</view>
+                <image class='forecast-data-img' src="/image/cond_icon/{{item.cond_code_d}}.png"></image>
+                <view class='forecast-data-maxtmp'>{{item.tmp_max}}</view>
+                <view class='forecast-data-mintmp'>{{item.tmp_min}}</view>
+            </view>
+        </block>
     </view>
-    <view class="content-now_cond">
-      <text>{{now_cond}}</text>
-    </view>
-    <view class="content-temp">
-      <text class='content-temp-max'>{{high_tmp}}</text>
-      <text class='content-temp-min'>{{low_tmp}}</text>
-    </view>
-  </view>
-  <view class="forecast">
-    <block wx:for="{{for_array}}">
-      <view class='forecast-data'>
-        <view class='forecast-data-date'>{{item.date}}</view>
-        <image class='forecast-data-img' src="/image/cond_icon/{{item.cond_code_d}}.png"></image>
-        <view class='forecast-data-maxtmp'>{{item.tmp_max}}</view>
-        <view class='forecast-data-mintmp'>{{item.tmp_min}}</view>
-      </view>
-    </block>
-  </view>
 </view>

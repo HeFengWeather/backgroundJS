@@ -1,5 +1,5 @@
 /* pages/lifeInf/lifeInf.wxss */
-.maxScreen{
+.scroll{
   position: fixed;
   height: 100%;
   width: 100%;

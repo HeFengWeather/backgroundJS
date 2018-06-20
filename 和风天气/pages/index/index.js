@@ -18,7 +18,9 @@ var curCity = app.globalData.selectedCity//curCity为当前选择的城市，使
 Page({
   data: {
     now_weather: "0",
-    region: ['山东省', '青岛市', '崂山区']
+    region: ['山东省', '青岛市', '崂山区'],
+    z_index: 2,
+    wave_list: []
   },
   bindRegionChange: function (e) {
     // console.log('picker发送选择改变，携带值为', e.detail.value)
@@ -65,7 +67,6 @@ Page({
     )
   },
   //事件处理函数
-  //
   onLoad: function () {
     var that = this
     getGPS()
@@ -101,6 +102,10 @@ Page({
         clearTimeout(times);//清除计数器
       }
     })
+  },
+  wave: function(e){
+     app.wave(e.detail.x, e.detail.y, this.data.z_index + 1, this);
+     console.log(this.data.wave_list)
   }
 })
 
