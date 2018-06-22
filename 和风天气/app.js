@@ -30,7 +30,12 @@ App({
     },
     globalData: {
         selectedCity: '青岛',
-        TabBar: 0
+        TabBar: 0,
+        windData: {
+            wind_dir: '',
+            wind_sc: '',
+            wind_spd: ''
+        }
     },
     wave: function(x, y, z, that) {
         that.data.wave_list.push({

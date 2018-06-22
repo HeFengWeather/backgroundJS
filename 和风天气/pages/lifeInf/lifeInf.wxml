@@ -11,19 +11,32 @@
                 <view class="wave wave0"></view>
             </view>
         </view>
-    </view >
+    </view>
     <scroll-view scroll-y="true" class="scroll">
-        <block wx:for="{{for_array}}"  wx:key="item" wx:for-item="i" class="content">
-            <view class="content-item">
-                <!-- <image src="{{i.img}}" lazy-load="true"></image>-->
-                <text class="content-item-brf">{{i.brf}}</text>
-                --
-                <text class="content-item-txt">{{i.txt}}</text>
+        <view class="sun">
+            <image src="#" class="sun-img" lazy-load="true"></image>
+            <view class="sun-rise">
+                <text class="sun-rise-time">{{for_sr}}</text>
             </view>
-        </block>
-        <view class="foot">
-            <text>{{for_sr}}</text> -----
-            <text>{{for_ss}}</text>
+            <view class="sun-set">
+                <text class="sun-set-time">{{for_ss}}</text>
+            </view>
+        </view>
+        <view class="content">
+            <view class="content-item" wx:for="{{for_array}}" wx:key="item" wx:for-item="i">
+                <view class="content-item-title">
+                    <text class="content-item-title-index">{{i.index}}</text>
+                    <text class="content-item-title-brf">{{i.brf}}</text>
+                </view>
+                <view class="content-item-warpper">
+                    <view class="content-item-img">
+                        <image src="{{i.img}}" lazy-load="true"></image>
+                    </view>
+                    <view class="content-item-text">
+                        <text>{{i.txt}}</text>
+                    </view>
+                </view>
+            </view>
         </view>
     </scroll-view>
 </view>
