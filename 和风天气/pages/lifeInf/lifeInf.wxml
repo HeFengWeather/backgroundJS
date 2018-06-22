@@ -17,6 +17,7 @@
             <view class="content-item">
                 <!-- <image src="{{i.img}}" lazy-load="true"></image>-->
                 <text class="content-item-brf">{{i.brf}}</text>
+                --
                 <text class="content-item-txt">{{i.txt}}</text>
             </view>
         </block>

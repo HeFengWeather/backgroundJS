@@ -105,7 +105,6 @@ Page({
   },
   wave: function(e){
      app.wave(e.detail.x, e.detail.y, this.data.z_index + 1, this);
-     console.log(this.data.wave_list)
   }
 })
 

@@ -10,22 +10,22 @@
     "navigationBarTextStyle": "black"
   },
   "tabBar": {
-    "selectedColor": "#ff0000",
+    "selectedColor": "#000000",
     "borderStyle": "white",
     "list": [
       {
         "pagePath": "pages/index/index",
         "text": "常规天气",
         "textColor": "#ffffff",
-        "iconPath": "image/movie-0.jpg",
-        "selectedIconPath": "image/movie-1.jpg"
+        "iconPath": "image/index_1.jpg",
+        "selectedIconPath": "image/index.jpg"
       },
       {
         "pagePath": "pages/lifeInf/lifeInf",
         "text": "生活指数",
         "textColor": "#ffffff",
-        "iconPath": "image/cinema-0.jpg",
-        "selectedIconPath": "image/cinema-1.jpg"
+        "iconPath": "image/lifeinf_1.jpg",
+        "selectedIconPath": "image/lifeinf.jpg"
       }
     ]
   }
