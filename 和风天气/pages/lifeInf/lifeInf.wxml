@@ -13,12 +13,35 @@
         </view>
     </view>
     <scroll-view scroll-y="true" class="scroll">
+        <view class="wrap">
+            <view class="cube">
+                <view class="front">
+                    <text>LifeInf</text>
+                </view>
+                <view class="back">
+                    <text></text>
+                </view>
+                <view class="top">
+                    <text></text>
+                </view>
+                <view class="bottom">
+                    <text></text>
+                </view>
+                <view class="left">
+                    <text></text>
+                </view>
+                <view class="right">
+                    <text></text>
+                </view>
+            </view>
+        </view>
         <view class="sun">
-            <image src="#" class="sun-img" lazy-load="true"></image>
             <view class="sun-rise">
+                <image src="/image/sun_rise.png" class="sun-rise-img" lazy-load="true"></image>
                 <text class="sun-rise-time">{{for_sr}}</text>
             </view>
             <view class="sun-set">
+                <image src="/image/sun_set.png" class="sun-set-img" lazy-load="true"></image>
                 <text class="sun-set-time">{{for_ss}}</text>
             </view>
         </view>
@@ -28,7 +51,7 @@
                     <text class="content-item-title-index">{{i.index}}</text>
                     <text class="content-item-title-brf">{{i.brf}}</text>
                 </view>
-                <view class="content-item-warpper">
+                <view class="content-item-wraper">
                     <view class="content-item-img">
                         <image src="{{i.img}}" lazy-load="true"></image>
                     </view>

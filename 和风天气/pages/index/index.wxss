@@ -1,6 +1,8 @@
 .picker {
     z-index: 9999;
     padding: 30rpx 0rpx;
+    display: block;
+    width: 100%;
 }
 
 .picker-now {
@@ -31,13 +33,15 @@
 .content {
     z-index: 9999;
     display: block;
+    width: 100%;
 }
 
 .content-now_weather {
     color: white;
-    display: block;
     text-align: center;
     font-size: 3.5rem;
+    margin-left: 70rpx;
+    display: block;
     font-weight: normal;
     font-family: "SF Pro Text",
                  "Myriad Set Pro",
@@ -81,28 +85,21 @@
 }
 
 .content-temp-min {
-    color: gray;
-    opacity: 0.6;
+    color: rgb(220, 220, 220);
+    opacity: 0.7;
 }
 
 .forecast {
     z-index: 9999;
     display: block;
-    width: 100%;
-    margin-bottom: 5%;
+    width: 90%;
+    margin-bottom: 8%;
+    border-radius: 15px;
+    padding: 2%;
+    background-color: rgba(230, 230, 250, 0.3);
 }
 
-.forecast::before {
-    content: '';
-    width: 100%;
-    height: 5rpx;
-    background-color: gray;
-    opacity: 0.45;
-    display: block;
-    margin-bottom: 2%;
-}
-
-.forecast-data {
+.forecast-item-data {
     width: 100%;
     display: block;
     margin-bottom: 5%;
@@ -110,15 +107,15 @@
     text-align: center;
 }
 
-.forecast-data view {
+.forecast-item-data view {
     display: inline-block;
 }
 
-.forecast-data-date {
+.forecast-item-data-date {
     margin-right: 120rpx;
 }
 
-.forecast-data-img {
+.forecast-item-data-img {
     display: inline-block;
     position: relative;
     width: 75rpx;
@@ -127,11 +124,11 @@
     top: 22rpx;
 }
 
-.forecast-data-maxtmp {
+.forecast-item-data-maxtmp {
     margin-right: 40rpx;
+    color: white;
 }
 
-.forecast-data-mintmp {
-    color: gray;
-    opacity: 0.7;
+.forecast-item-data-mintmp {
+    color: rgb(150, 150, 150);
 }

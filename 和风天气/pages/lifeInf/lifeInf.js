@@ -3,7 +3,7 @@
 const app = getApp()
 var switchTabBar = app.globalData.TabBar
 var curCity
-var list2 = ["/image/movie-0.jpg", "/image/movie-0.jpg", "/image/movie-0.jpg", "/image/movie-0.jpg", "/image/movie-0.jpg", "/image/movie-0.jpg", "/image/movie-0.jpg", "/image/movie-0.jpg"],
+var list2 = ["/image/comfort.png", "/image/clothes.png", "/image/illness.png", "/image/sport.png", "/image/travel.png", "/image/uvray.png", "/image/car.png", "/image/pollution.png"],
     list1 = [],
     list = [] //初始每一条生活信息的图片路径
 var item_tittle = ['舒适度指数', '穿衣指数', '感冒指数', '运动指数', '旅游指数', '紫外线指数', '洗车指数', '空气污染条件扩散指数']

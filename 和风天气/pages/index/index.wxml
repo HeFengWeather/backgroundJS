@@ -11,7 +11,7 @@
                 <view class="wave wave0"></view>
             </view>
         </view>
-    </view >
+    </view>
 
     <picker class="picker" mode="region" bindchange="bindRegionChange" value="{{region}}">
         <view class="picker-now">
@@ -32,13 +32,12 @@
         </view>
     </view>
     <view class="forecast">
-        <block wx:for="{{for_array}}" wx:key="item">
-            <view class="forecast-data">
-                <view class="forecast-data-date">{{item.date}}</view>
-                <image class="forecast-data-img" src="/image/cond_icon/{{item.cond_code_d}}.png"></image>
-                <view class="forecast-data-maxtmp">{{item.tmp_max}}</view>
-                <view class="forecast-data-mintmp">{{item.tmp_min}}</view>
-            </view>
-        </block>
+    <view wx:for="{{for_array}}" wx:key="item" class="forecast-item">
+        <view class="forecast-item-data">
+            <view class="forecast-item-data-date">{{item.date}}</view>
+            <image class="forecast-item-data-img" src="/image/cond_icon/{{item.cond_code_d}}.png"></image>
+            <view class="forecast-item-data-maxtmp">{{item.tmp_max}}</view>
+            <view class="forecast-item-data-mintmp">{{item.tmp_min}}</view>
+        </view></view>
     </view>
 </view>

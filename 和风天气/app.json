@@ -1,32 +1,32 @@
 {
-  "pages": [
-    "pages/lifeInf/lifeInf",
-    "pages/index/index"
-  ],
-  "window": {
-    "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "WeChat",
-    "navigationBarTextStyle": "black"
-  },
-  "tabBar": {
-    "selectedColor": "#000000",
-    "borderStyle": "white",
-    "list": [
-      {
-        "pagePath": "pages/index/index",
-        "text": "常规天气",
-        "textColor": "#ffffff",
-        "iconPath": "image/index_1.jpg",
-        "selectedIconPath": "image/index.jpg"
-      },
-      {
-        "pagePath": "pages/lifeInf/lifeInf",
-        "text": "生活指数",
-        "textColor": "#ffffff",
-        "iconPath": "image/lifeinf_1.jpg",
-        "selectedIconPath": "image/lifeinf.jpg"
-      }
-    ]
-  }
+    "pages": [
+        "pages/index/index",
+        "pages/lifeInf/lifeInf"
+    ],
+    "window": {
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#fff",
+        "navigationBarTitleText": "WeChat",
+        "navigationBarTextStyle": "black"
+    },
+    "tabBar": {
+        "selectedColor": "#000000",
+        "borderStyle": "white",
+        "list": [
+            {
+                "pagePath": "pages/index/index",
+                "text": "常规天气",
+                "textColor": "#ffffff",
+                "iconPath": "image/index_1.jpg",
+                "selectedIconPath": "image/index.jpg"
+            },
+            {
+                "pagePath": "pages/lifeInf/lifeInf",
+                "text": "生活指数",
+                "textColor": "#ffffff",
+                "iconPath": "image/lifeinf_1.jpg",
+                "selectedIconPath": "image/lifeinf.jpg"
+            }
+        ]
+    }
 }
