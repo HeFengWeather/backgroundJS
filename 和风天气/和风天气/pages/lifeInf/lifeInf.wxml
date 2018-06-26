@@ -1,0 +1,16 @@
+<!--pages/lifeInf/lifeInf.wxml-->
+<view class="container">
+<scroll-view scroll-y="true" class="maxScreen">
+  <block  wx:for="{{for_array}}" wx:for-item="i" >
+  <view>
+<image src="{{i.img}}" lazy-load="true"></image>
+<text>{{i.brf}}</text>
+<text>{{i.txt}}</text>
+  </view>
+  </block>
+   <view>
+   <text>{{for_sr}}</text>        -----
+   <text>{{for_ss}}</text>
+   </view>
+   </scroll-view>
+</view>

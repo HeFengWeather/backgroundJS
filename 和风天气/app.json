@@ -4,9 +4,10 @@
         "pages/lifeInf/lifeInf"
     ],
     "window": {
-        "backgroundTextStyle": "light",
+        "backgroundTextStyle": "dark",
         "navigationBarBackgroundColor": "#fff",
-        "navigationBarTitleText": "WeChat",
+        "enablePullDownRefresh": true,
+        "navigationBarTitleText": "和风天气",
         "navigationBarTextStyle": "black"
     },
     "tabBar": {

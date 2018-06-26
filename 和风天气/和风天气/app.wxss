@@ -1,0 +1,32 @@
+/**app.wxss**/
+page{  
+  width:100%;  
+  height:100%;  
+  overflow: hidden;  
+}  
+
+.container {
+  height: 100%;
+  width:100%;  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  /* padding: 50rpx 0;  */
+  box-sizing: border-box;
+}
+
+.container::before{
+  background: url('https://goss.veer.com/creative/vcg/veer/800water/veer-150546653.jpg') no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;/*-1 可以當背景*/
+    -webkit-filter: blur(4px);
+    filter: blur(4rpx);
+    opacity: 0.9;
+}

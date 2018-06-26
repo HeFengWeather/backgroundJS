@@ -107,6 +107,43 @@ Page({
             }
         })
     },
+    onPullDownRefresh: function () {
+      var that = this
+      getGPS()
+      var times = setInterval(function () { //初始根据GPS逆定位进行请求
+        if (result) {
+          wx.request({
+            url: 'https://free-api.heweather.com/s6/weather?location=' + curCity + '&key=fd29112697d54606bd9499e54b05cf1d',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            success: function (res) {
+              if (!res.data.HeWeather6[0].basic) {
+                that.setData({
+                  now_cond: '定位失败，请手动定位',
+                })
+              } else {
+
+                app.globalData.windData.wind_dir = res.data.HeWeather6[0].now.wind_dir;
+                app.globalData.windData.sc = res.data.HeWeather6[0].now.sc;
+                app.globalData.windData.spd = res.data.HeWeather6[0].spd;
+                that.setData({
+                  now_weather: res.data.HeWeather6[0].now.tmp,
+                  now_cond: res.data.HeWeather6[0].now.cond_txt,
+                  high_tmp: res.data.HeWeather6[0].daily_forecast[0].tmp_max,
+                  low_tmp: res.data.HeWeather6[0].daily_forecast[0].tmp_min,
+                  for_array: res.data.HeWeather6[0].daily_forecast,
+                  result: 1,
+                  jsonData: JSON.stringify(res.data.HeWeather6[0].daily_forecast)
+                })
+              }
+            } //加载图片，未完成
+          }, 2000)
+          clearTimeout(times); //清除计数器
+          wx.stopPullDownRefresh() 
+        }
+      })
+    },  
     wave: function(e) {
         app.wave(e.detail.x, e.detail.y, this.data.z_index + 1, this);
     }
